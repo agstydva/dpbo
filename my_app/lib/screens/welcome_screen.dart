@@ -11,6 +11,7 @@ class WelcomeScreen extends StatelessWidget {
           children: [
             Stack(
               children: [
+                // Warna Latar Putih Lengkung di bagian kanan
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 1.6,
@@ -18,14 +19,17 @@ class WelcomeScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                // Warna Latar Belakang dari Gambar
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 1.6,
                   decoration: BoxDecoration(
                     color: Color.fromRGBO(0, 175, 6, 1),
+                    // Buat Lengkungan pada Backround, bottomRight --> Kanan
                     borderRadius:
                         BorderRadius.only(bottomRight: Radius.circular(70)),
                   ),
+                  // Menaruh Gambar dan posisi di tengah
                   child: Center(
                     child:
                         Image.asset("images/environmentally.png", scale: 0.8),
@@ -33,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-
+            // Warna Latar Hijau Lengkung di bagian kiri
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -44,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-
+            // Backround Putih 
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
@@ -59,8 +63,10 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
+                    // Judul
                     Text(
                       "Go Green",
+                      // Style Judul
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.w600,
@@ -68,11 +74,13 @@ class WelcomeScreen extends StatelessWidget {
                         wordSpacing: 2,
                       ),
                     ),
-                    SizedBox(height: 15),
+                    // SizedBox = Space 
+                    SizedBox(height: 25),
                     Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 40,
                       ),
+                      // Deskripsi di bawah judul
                       child: Text(
                         "The importance of caring for the environment must start with ourselves",
                         textAlign: TextAlign.center,
@@ -82,18 +90,21 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    
+                    //Box Tombol "Get Start"
                     SizedBox(height: 30),
                     Material(
                       color: Color(0xFFD8B930),
                       borderRadius: BorderRadius.circular(10),
+                      // Arah dari tombol jika di klik
                       child: InkWell(
                         onTap: () {},
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 80),
+                              // Tulisan di dalam Tombol
                           child: Text(
                             "Get Start",
+                            // Style
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 22,
