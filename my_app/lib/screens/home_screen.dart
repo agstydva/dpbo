@@ -6,6 +6,7 @@ import 'package:my_app/screens/discussion_page.dart';
 import 'package:my_app/screens/ecocycle_page.dart';
 import 'package:my_app/screens/ecoedu_page.dart';
 import 'package:my_app/screens/location_page.dart';
+import 'package:my_app/screens/news_screen.dart';
 import 'package:my_app/screens/scan_page.dart';
 import 'package:my_app/screens/your_poin_page.dart';
 
