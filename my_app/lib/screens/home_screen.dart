@@ -68,7 +68,7 @@ class HomePage extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
               child: Image.asset(
-                '',
+                'images/banner1.png',
                 fit: BoxFit.cover,
                 width: MediaQuery.of(context).size.width,
                 height: 120,
