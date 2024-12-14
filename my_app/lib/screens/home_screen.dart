@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  // Data Dummy untuk Tampilan
-  List catNames = [
+  // Data statis untuk kategori dan gambar
+  final List<String> catNames = [
     "Scan",
     'EcoCycle',
     'Company',
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     'Location',
   ];
 
-  List<Color> catColors = [
+  final List<Color> catColors = [
     Color(0xFFFFCF2F),
     Color(0xFF6FE08D),
     Color(0xFF61BDFD),
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
     Color(0xFF78E667),
   ];
 
-  List<Icon> catIcons = [
+  final List<Icon> catIcons = [
     Icon(Icons.qr_code_scanner_outlined, color: Colors.white, size: 30),
     Icon(Icons.recycling_rounded, color: Colors.white, size: 30),
     Icon(Icons.store, color: Colors.white, size: 30),
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
     Icon(Icons.location_city, color: Colors.white, size: 30),
   ];
 
-  List imgList = [
+  final List<String> imgList = [
     'environmental1',
     'environmental2',
     'environmental3',
@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          // Header Hijau
+          // Header Container
           Container(
             padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
             decoration: BoxDecoration(
@@ -54,7 +54,6 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Ikon Profil dan Menu
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -71,11 +70,10 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10),
-                // Teks Nama User
                 Padding(
                   padding: EdgeInsets.only(left: 3, bottom: 15),
                   child: Text(
-                    "Hi, Agastya Dava",
+                    "Hi, User",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w600,
@@ -85,7 +83,6 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Kotak Pencarian
                 Container(
                   margin: EdgeInsets.only(top: 5, bottom: 20),
                   width: MediaQuery.of(context).size.width,
@@ -113,25 +110,22 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          // Banner
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                'images/banner1.png',
-                fit: BoxFit.cover,
-                width: MediaQuery.of(context).size.width,
-                height: 120,
-              ),
-            ),
-          ),
-
-          // Kategori
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.only(top: 5, left: 15, right: 15),
             child: Column(
               children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      'images/banner1.png',
+                      fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width,
+                      height: 120,
+                    ),
+                  ),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -188,15 +182,6 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-              ],
-            ),
-          ),
-
-          // Newest
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: Column(
-              children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -242,11 +227,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(
-                              top: 5,
-                              left: 15,
-                              right: 15,
-                              bottom: 20,
-                            ),
+                                top: 5, left: 15, right: 15, bottom: 20),
                             child: Image.asset(
                               "images/${imgList[index]}.jpg",
                               width: 100,
@@ -266,9 +247,7 @@ class HomePage extends StatelessWidget {
                           Text(
                             "20 Videos",
                             style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
+                                fontSize: 12, fontWeight: FontWeight.w500),
                           ),
                         ],
                       ),
