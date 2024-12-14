@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -97,7 +98,13 @@ class WelcomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       // Arah dari tombol jika di klik
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ));
+                        },
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               vertical: 15, horizontal: 80),
