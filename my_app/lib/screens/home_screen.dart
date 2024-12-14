@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
+  // Data Dummy untuk Tampilan
   List catNames = [
     "Scan",
     'EcoCycle',
@@ -40,7 +41,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          // Header
+          // Header Hijau
           Container(
             padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
             decoration: BoxDecoration(
@@ -53,15 +54,24 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Ikon Profil dan Menu
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.account_circle_rounded,
-                        size: 30, color: Colors.white),
-                    Icon(Icons.menu, size: 30, color: Colors.white),
+                    Icon(
+                      Icons.account_circle_rounded,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    Icon(
+                      Icons.menu,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   ],
                 ),
                 SizedBox(height: 10),
+                // Teks Nama User
                 Padding(
                   padding: EdgeInsets.only(left: 3, bottom: 15),
                   child: Text(
@@ -69,10 +79,13 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w600,
+                      letterSpacing: 1,
+                      wordSpacing: 2,
                       color: Colors.white,
                     ),
                   ),
                 ),
+                // Kotak Pencarian
                 Container(
                   margin: EdgeInsets.only(top: 5, bottom: 20),
                   width: MediaQuery.of(context).size.width,
@@ -89,13 +102,17 @@ class HomePage extends StatelessWidget {
                       hintStyle: TextStyle(
                         color: Colors.black.withOpacity(0.5),
                       ),
-                      prefixIcon: Icon(Icons.search, size: 25),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        size: 25,
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
           ),
+
           // Banner
           Padding(
             padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
@@ -109,8 +126,10 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
+
+          // Kategori
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
                 Row(
@@ -169,6 +188,15 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
+              ],
+            ),
+          ),
+
+          // Newest
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: Column(
+              children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -190,69 +218,62 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10),
-
-                // GridView untuk daftar "Newest"
-                Expanded(
-                  child: GridView.builder(
-                    itemCount: imgList.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // Jumlah kolom
-                      childAspectRatio:
-                          (MediaQuery.of(context).size.height - 50 - 25) /
-                              (4 * 240),
-                      mainAxisSpacing: 10, // Jarak antar baris
-                      crossAxisSpacing: 10, // Jarak antar kolom
-                    ),
-                    itemBuilder: (context, index) {
-                      return Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color(0xFFF5F3FF),
-                        ),
-                        child: Column(
-                          children: [
-                            // Gambar di dalam grid
-                            Padding(
-                              padding: EdgeInsets.only(
-                                top: 5,
-                                left: 15,
-                                right: 15,
-                                bottom: 20,
-                              ),
-                              child: Image.asset(
-                                "images/${imgList[index]}.jpg", // Path gambar
-                                width: 100,
-                                height: 100,
-                              ),
-                            ),
-                            SizedBox(height: 5),
-
-                            // Nama gambar
-                            Text(
-                              imgList[index],
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.black.withOpacity(0.6),
-                              ),
-                            ),
-                            SizedBox(height: 5),
-
-                            // Deskripsi tambahan
-                            Text(
-                              "20 Videos", // Deskripsi jumlah video
-                              style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
+                GridView.builder(
+                  itemCount: imgList.length,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio:
+                        (MediaQuery.of(context).size.height - 50 - 25) /
+                            (4 * 240),
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
                   ),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding:
+                          EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Color(0xFFF5F3FF),
+                      ),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: 5,
+                              left: 15,
+                              right: 15,
+                              bottom: 20,
+                            ),
+                            child: Image.asset(
+                              "images/${imgList[index]}.jpg",
+                              width: 100,
+                              height: 100,
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            imgList[index],
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black.withOpacity(0.6),
+                            ),
+                          ),
+                          SizedBox(height: 5),
+                          Text(
+                            "20 Videos",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
