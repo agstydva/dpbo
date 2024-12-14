@@ -259,6 +259,20 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      // Navbar Bawah
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        iconSize: 32,
+        selectedItemColor: Color.fromARGB(255, 13, 158, 0),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.money_sharp), label: 'Navbar 2'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.message), label: 'Navbar 3'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Navbar 4'),
+        ],
+      ),
     );
   }
 }
