@@ -275,40 +275,48 @@ class HomePage extends StatelessWidget {
                     crossAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) {
-                    return Container(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Color(0xFFF5F3FF),
-                      ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(
-                                top: 5, left: 15, right: 15, bottom: 20),
-                            child: Image.asset(
-                              "images/${imgList[index]}.jpg",
-                              width: 100,
-                              height: 100,
+                    //Logic buat pindah halaman Newest
+                    return InkWell(
+                      onTap: () {},
+                      //Border Padding
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xFFF5F3FF),
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 5, left: 15, right: 15, bottom: 20),
+                              //Ngambil Gambar dari yang diatas dan repo
+                              child: Image.asset(
+                                "images/${imgList[index]}.jpg",
+                                width: 100,
+                                height: 100,
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            imgList[index],
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black.withOpacity(0.6),
+                            //Lengkah antar Gambar dan Teks
+                            SizedBox(height: 5),
+                            Text(
+                              imgList[index],
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
                             ),
-                          ),
-                          SizedBox(height: 5),
-                          Text(
-                            "20 Videos",
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w500),
-                          ),
-                        ],
+                            //Lengkah antar Judul dan Deskripsi
+                            SizedBox(height: 5),
+                            Text(
+                              "20 Videos",
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },
