@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 3, bottom: 15),
                   child: Text(
-                    "Hi, User",
+                    "Hi, Agastya Dava",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w600,
@@ -155,31 +155,80 @@ class HomePage extends StatelessWidget {
                     crossAxisCount: 3,
                     childAspectRatio: 1.1,
                   ),
+                  //LOGIKA dari Setiap Category
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                            color: catColors[index],
-                            shape: BoxShape.circle,
+                    return InkWell(
+                      onTap: () {
+                        // Navigasi berdasarkan kategori
+                        switch (index) {
+                          case 0: // Scan
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ScanPage()),
+                            );
+                            break;
+                          case 1: // EcoCycle
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EcoCyclePage()),
+                            );
+                            break;
+                          case 2: // Company
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CompanyPage()),
+                            );
+                            break;
+                          case 3: // Article
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ArticlePage()),
+                            );
+                            break;
+                          case 4: // EcoEdu
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EcoEduPage()),
+                            );
+                            break;
+                          case 5: // Location
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LocationPage()),
+                            );
+                            break;
+                        }
+                      },
+                      child: Column(
+                        children: [
+                          Container(
+                            height: 60,
+                            width: 60,
+                            decoration: BoxDecoration(
+                              color: catColors[index],
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: catIcons[index],
+                            ),
                           ),
-                          child: Center(
-                            child: catIcons[index],
+                          SizedBox(height: 10),
+                          Text(
+                            catNames[index],
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black.withOpacity(0.7),
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 10),
-                        Text(
-                          catNames[index],
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black.withOpacity(0.7),
-                          ),
-                        ),
-                      ],
-                    );
+                        ],
+                      ),
                   },
                 ),
                 Row(
@@ -270,8 +319,7 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.money_sharp), label: 'Navbar 2'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.message), label: 'Navbar 3'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Navbar 3'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Navbar 4'),
         ],
       ),
