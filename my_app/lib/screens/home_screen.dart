@@ -169,6 +169,91 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Newest",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "See All",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF674AEF),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+
+                // GridView untuk daftar "Newest"
+                Expanded(
+                  child: GridView.builder(
+                    itemCount: imgList.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, // Jumlah kolom
+                      childAspectRatio:
+                          (MediaQuery.of(context).size.height - 50 - 25) /
+                              (4 * 240),
+                      mainAxisSpacing: 10, // Jarak antar baris
+                      crossAxisSpacing: 10, // Jarak antar kolom
+                    ),
+                    itemBuilder: (context, index) {
+                      return Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color(0xFFF5F3FF),
+                        ),
+                        child: Column(
+                          children: [
+                            // Gambar di dalam grid
+                            Padding(
+                              padding: EdgeInsets.only(
+                                top: 5,
+                                left: 15,
+                                right: 15,
+                                bottom: 20,
+                              ),
+                              child: Image.asset(
+                                "images/${imgList[index]}.jpg", // Path gambar
+                                width: 100,
+                                height: 100,
+                              ),
+                            ),
+                            SizedBox(height: 5),
+
+                            // Nama gambar
+                            Text(
+                              imgList[index],
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black.withOpacity(0.6),
+                              ),
+                            ),
+                            SizedBox(height: 5),
+
+                            // Deskripsi tambahan
+                            Text(
+                              "20 Videos", // Deskripsi jumlah video
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           ),
