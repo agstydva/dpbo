@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:my_app/screens/home_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Stack(
@@ -16,7 +18,7 @@ class WelcomeScreen extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 1.6,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                   ),
                 ),
@@ -24,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height / 1.6,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color.fromRGBO(0, 175, 6, 1),
                     // Buat Lengkungan pada Backround, bottomRight --> Kanan
                     borderRadius:
@@ -44,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 2.666,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromRGBO(0, 175, 6, 1),
                 ),
               ),
@@ -55,8 +57,8 @@ class WelcomeScreen extends StatelessWidget {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 2.666,
-                padding: EdgeInsets.only(top: 40, bottom: 30),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.only(top: 40, bottom: 30),
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(70),
@@ -65,7 +67,7 @@ class WelcomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     // Judul
-                    Text(
+                    const Text(
                       "Go Green",
                       // Style Judul
                       style: TextStyle(
@@ -76,9 +78,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                     // SizedBox = Space 
-                    SizedBox(height: 25),
+                    const SizedBox(height: 25),
                     Padding(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 40,
                       ),
                       // Deskripsi di bawah judul
@@ -92,9 +94,9 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                     //Box Tombol "Get Start"
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Material(
-                      color: Color(0xFFD8B930),
+                      color: const Color(0xFFD8B930),
                       borderRadius: BorderRadius.circular(10),
                       // Arah dari tombol jika di klik
                       child: InkWell(
@@ -106,10 +108,10 @@ class WelcomeScreen extends StatelessWidget {
                           ));
                         },
                         child: Container(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               vertical: 15, horizontal: 80),
                               // Tulisan di dalam Tombol
-                          child: Text(
+                          child: const Text(
                             "Get Start",
                             // Style
                             style: TextStyle(

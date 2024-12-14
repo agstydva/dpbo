@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class NewsScreen extends StatefulWidget {
   String jpg;
-  NewsScreen(this.jpg);
+  NewsScreen(this.jpg, {super.key});
 
   @override
   State<NewsScreen> createState() => _NewsScreenState();
@@ -21,12 +21,12 @@ class _NewsScreenState extends State<NewsScreen> {
         centerTitle: true,
         title: Text(
           widget.jpg,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             letterSpacing: 1,
           ),
         ),
-        actions: [
+        actions: const [
           Padding(
             padding: EdgeInsets.only(right: 10),
             child: Icon(
@@ -38,28 +38,28 @@ class _NewsScreenState extends State<NewsScreen> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: ListView(
           children: [
             Container(
-              padding: EdgeInsets.all(5),
+              padding: const EdgeInsets.all(5),
               width: MediaQuery.of(context).size.width,
               height: 200,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Color(0xFFF5F3FF),
+                color: const Color(0xFFF5F3FF),
                 image: DecorationImage(
                   image: AssetImage("images/${widget.jpg}.jpg"),
                 ),
               ),
               child: Center(
                 child: Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(5),
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
+                  child: const Icon(
                     Icons.play_arrow_rounded,
                     color: Color(0xFF674AEF),
                     size: 45,

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/account_page.dart';
-import 'package:my_app/screens/article_page.dart';
-import 'package:my_app/screens/company_page.dart';
+//Import Screen Bottom Navbar
+import 'package:my_app/screens/news_screen.dart';
+import 'package:my_app/screens/your_poin_page.dart';
 import 'package:my_app/screens/discussion_page.dart';
+import 'package:my_app/screens/account_page.dart';
+//Import Screen category
+import 'package:my_app/screens/scan_page.dart';
+import 'package:my_app/screens/company_page.dart';
 import 'package:my_app/screens/ecocycle_page.dart';
+import 'package:my_app/screens/article_page.dart';
 import 'package:my_app/screens/ecoedu_page.dart';
 import 'package:my_app/screens/location_page.dart';
-import 'package:my_app/screens/news_screen.dart';
-import 'package:my_app/screens/scan_page.dart';
-import 'package:my_app/screens/your_poin_page.dart';
-
 
 class HomePage extends StatelessWidget {
-  // Data statis untuk kategori dan gambar
-  final List<String> catNames = [
+  // Creating Static data in Lists
+  List catNames = [
     "Scan",
     'EcoCycle',
     'Company',
@@ -22,7 +23,8 @@ class HomePage extends StatelessWidget {
     'Location',
   ];
 
-  final List<Color> catColors = [
+  // List Warna
+  List<Color> catColors = [
     Color(0xFFFFCF2F),
     Color(0xFF6FE08D),
     Color(0xFF61BDFD),
@@ -31,7 +33,8 @@ class HomePage extends StatelessWidget {
     Color(0xFF78E667),
   ];
 
-  final List<Icon> catIcons = [
+  // List Icon
+  List<Icon> catIcons = [
     Icon(Icons.qr_code_scanner_outlined, color: Colors.white, size: 30),
     Icon(Icons.recycling_rounded, color: Colors.white, size: 30),
     Icon(Icons.store, color: Colors.white, size: 30),
@@ -40,7 +43,7 @@ class HomePage extends StatelessWidget {
     Icon(Icons.location_city, color: Colors.white, size: 30),
   ];
 
-  final List<String> imgList = [
+  List imgList = [
     'environmental1',
     'environmental2',
     'environmental3',
@@ -52,12 +55,13 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          // Header Container
           Container(
+            //Recomend (top: 15, left: 15, right: 15, bottom: 15)
             padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
             decoration: BoxDecoration(
               color: Color.fromARGB(255, 0, 164, 3),
               borderRadius: BorderRadius.only(
+                //lengkungan backround hijau
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
@@ -65,6 +69,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // logo profile dan menu hamburger
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -80,6 +85,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+                // Nama User
                 SizedBox(height: 10),
                 Padding(
                   padding: EdgeInsets.only(left: 3, bottom: 15),
@@ -94,9 +100,11 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+                //Teks Search Here
                 Container(
                   margin: EdgeInsets.only(top: 5, bottom: 20),
                   width: MediaQuery.of(context).size.width,
+                  //Teks Box, Size big recomend : 55
                   height: 35,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -120,11 +128,13 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-
+          
           Padding(
             padding: EdgeInsets.only(top: 5, left: 15, right: 15),
-            child: Column(
+            child: 
+            Column(
               children: [
+                // Foto Banner kecil
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),
                   child: ClipRRect(
@@ -133,10 +143,11 @@ class HomePage extends StatelessWidget {
                       'images/banner1.png',
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context).size.width,
-                      height: 120,
+                      height: 120, // Ukuran kecil
                     ),
                   ),
                 ),
+                // Teks Category dan See All
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -157,7 +168,8 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 10),
+                // 6 Fitur Scan, EcoCycle, Company, Article, EcoEdu, Location
+                SizedBox(height: 10), // Spasi antara header dan GridView
                 GridView.builder(
                   itemCount: catNames.length,
                   shrinkWrap: true,
@@ -243,6 +255,8 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
+
+                // Tulisan Newest dan See All
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -263,7 +277,10 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+
+                // Kategori News
                 SizedBox(height: 10),
+                //Ngambil Nama dari List
                 GridView.builder(
                   itemCount: imgList.length,
                   shrinkWrap: true,
@@ -277,7 +294,6 @@ class HomePage extends StatelessWidget {
                     crossAxisSpacing: 10,
                   ),
                   itemBuilder: (context, index) {
-                    //Logic buat pindah halaman Newest
                     return InkWell(
                       onTap: () {
                         Navigator.push(
@@ -345,7 +361,8 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.money_sharp), label: 'Your Poin'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Discussion'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.message), label: 'Discussion'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
         //untuk pindah navbar (logikanya)
