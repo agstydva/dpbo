@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/article_page.dart';
 import 'package:my_app/screens/company_page.dart';
+import 'package:my_app/screens/discussion_page.dart';
 import 'package:my_app/screens/ecocycle_page.dart';
 import 'package:my_app/screens/ecoedu_page.dart';
 import 'package:my_app/screens/location_page.dart';
