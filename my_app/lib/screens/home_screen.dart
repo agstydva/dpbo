@@ -328,9 +328,9 @@ class HomePage extends StatelessWidget {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.money_sharp), label: 'Navbar 2'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Navbar 3'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Navbar 4'),
+              icon: Icon(Icons.money_sharp), label: 'Your Poin'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Discussion'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
         //untuk pindah navbar (logikanya)
         onTap: (index) {
