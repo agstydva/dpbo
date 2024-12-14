@@ -277,7 +277,13 @@ class HomePage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     //Logic buat pindah halaman Newest
                     return InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewsScreen(imgList[index]),
+                            ));
+                      },
                       //Border Padding
                       child: Container(
                         padding:
