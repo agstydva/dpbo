@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/account_page.dart';
 import 'package:my_app/screens/article_page.dart';
 import 'package:my_app/screens/company_page.dart';
 import 'package:my_app/screens/discussion_page.dart';
