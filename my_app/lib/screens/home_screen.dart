@@ -264,6 +264,8 @@ class HomePage extends StatelessWidget {
         showUnselectedLabels: true,
         iconSize: 32,
         selectedItemColor: Color.fromARGB(255, 13, 158, 0),
+        selectedFontSize: 16,
+        unselectedItemColor: Colors.grey,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
