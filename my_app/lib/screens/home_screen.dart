@@ -6,6 +6,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
+          // Header
           Container(
             padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
             decoration: BoxDecoration(
@@ -59,6 +60,19 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ),
+          // Banner
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                '',
+                fit: BoxFit.cover,
+                width: MediaQuery.of(context).size.width,
+                height: 120,
+              ),
             ),
           ),
         ],
