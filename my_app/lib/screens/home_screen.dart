@@ -21,16 +21,9 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(
-                      Icons.account_circle_rounded,
-                      size: 30,
-                      color: Colors.white,
-                    ),
-                    Icon(
-                      Icons.menu,
-                      size: 30,
-                      color: Colors.white,
-                    ),
+                    Icon(Icons.account_circle_rounded,
+                        size: 30, color: Colors.white),
+                    Icon(Icons.menu, size: 30, color: Colors.white),
                   ],
                 ),
                 SizedBox(height: 10),
