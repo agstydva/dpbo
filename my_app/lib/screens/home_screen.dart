@@ -10,6 +10,7 @@ import 'package:my_app/screens/news_screen.dart';
 import 'package:my_app/screens/scan_page.dart';
 import 'package:my_app/screens/your_poin_page.dart';
 
+
 class HomePage extends StatelessWidget {
   // Data statis untuk kategori dan gambar
   final List<String> catNames = [
