@@ -29,10 +29,10 @@ class HomePage extends StatelessWidget {
   ];
 
   List imgList = [
-    'images/environmental1.jpg',
-    'images/environmental2.jpg',
-    'images/environmental3.jpg',
-    'images/environmental4.jpg',
+    'environmental1',
+    'environmental2',
+    'environmental3',
+    'environmental4',
   ];
 
   @override
