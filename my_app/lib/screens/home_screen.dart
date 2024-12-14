@@ -329,6 +329,27 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Navbar 3'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Navbar 4'),
         ],
+        //untuk pindah navbar (logikanya)
+        onTap: (index) {
+          print("Tapped on $index");
+          // Navigasi berdasarkan index item
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => YourPoinPage()),
+            );
+          } else if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DiscussionPage()),
+            );
+          } else if (index == 3) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AccountPage()),
+            );
+          }
+        },
       ),
     );
   }
