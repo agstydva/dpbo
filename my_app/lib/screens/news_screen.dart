@@ -67,6 +67,28 @@ class _NewsScreenState extends State<NewsScreen> {
                 ),
               ),
             ),
+            // Spasi
+            SizedBox(height: 15),
+            // Judul
+            Text(
+              "${widget.jpg} Complete Course",
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+                color: Colors.black.withOpacity(0.7),
+              ),
+            ),
+            // Spasi
+            SizedBox(height: 5),
+            // Deskripsi terdiri dari berapa bnyk video
+            Text(
+              "55 Videos",
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w500,
+                color: Colors.black.withOpacity(0.5),
+              ),
+            ),
           ],
         ),
       ),
