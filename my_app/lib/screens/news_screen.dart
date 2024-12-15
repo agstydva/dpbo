@@ -89,6 +89,69 @@ class _NewsScreenState extends State<NewsScreen> {
                 color: Colors.black.withOpacity(0.5),
               ),
             ),
+            SizedBox(height: 20),
+            Container(
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+              decoration: BoxDecoration(
+                color: Color(0xFFF5F3FF),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Material(
+                    color: isVideoSection
+                        ? Color.fromARGB(255, 0, 177, 24)
+                        : Color.fromARGB(255, 0, 177, 24).withOpacity(0.6),
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isVideoSection = true;
+                        });
+                      },
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                        child: Text(
+                          "Videos",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Material(
+                    color: isVideoSection
+                        ? Color.fromARGB(255, 0, 177, 24).withOpacity(0.6)
+                        : Color.fromARGB(255, 0, 177, 24),
+                    borderRadius: BorderRadius.circular(10),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isVideoSection = false;
+                        });
+                      },
+                      child: Container(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                        child: Text(
+                          "Description",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
