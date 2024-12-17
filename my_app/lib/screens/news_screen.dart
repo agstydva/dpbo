@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/widgets/description_section.dart';
+import 'package:my_app/widgets/videos_section.dart';
 
 class NewsScreen extends StatefulWidget {
   String jpg;
