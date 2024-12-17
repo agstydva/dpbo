@@ -152,6 +152,11 @@ class _NewsScreenState extends State<NewsScreen> {
                 ],
               ),
             ),
+            // Videos Section dan Description Section
+            SizedBox(height: 10),
+            // Jika kondisi isVideoSection = True, maka halaman akan ditampilkan
+            // Jika tidak/false, maka halaman DescriptionSection yang ditampilkan
+            isVideoSection ? VideoSection() : DescriptionSection(),
           ],
         ),
       ),
