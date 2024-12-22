@@ -17,6 +17,15 @@ class _AddProductPageState extends State<AddProductPage> {
     'images/botol1_botol_aqua.jpg',
     'images/botol2_botol_le_minerale.jpg',
     'images/botol3_botol_kaleng_nescafe.jpg',
+    'images/botol4_botol_sprite.jpg',
+    'images/botol5_botol_teh_sosro.jpg',
+    'images/botol6_botol_coca_cola.jpg',
+    'images/botol7_botol_kaleng_milo.jpg',
+    'images/botol8_botol_kecap_bango.jpg',
+    'images/botol9__botol_pocari_sweat.jpg',
+    'images/botol10_botol_fruit_tea.jpg',
+    'images/botol11_botol_teh_pucuk.jpg',
+    'images/botol12_botol_good_day.jpg',
   ];
 
   @override
