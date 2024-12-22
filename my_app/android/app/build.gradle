@@ -9,10 +9,21 @@ android {
     namespace = "com.example.my_app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
+    compileSdkVersion 33
+    targetSdkVersion 33
 
     defaultConfig {
-        minSdkVersion 21  // Atur ke versi minimal SDK yang disarankan
+        applicationId "com.example.myapp"
+        minSdkVersion 21 // Sesuaikan dengan minimum SDK yang Anda inginkan
+        targetSdkVersion 33 // Pastikan target SDK disesuaikan
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
     }
+
+    dependencies {
+    classpath 'com.android.tools.build:gradle:7.3.0' // Perbarui versi jika perlu
+    }
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
