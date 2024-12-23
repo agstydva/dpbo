@@ -4,6 +4,8 @@ import 'dart:convert';  // Untuk encoding dan decoding data produk
 import 'addproduct.dart';
 
 class EcoCyclePage extends StatefulWidget {
+  const EcoCyclePage({super.key});
+  
   @override
   _EcoCyclePageState createState() => _EcoCyclePageState();
 }
