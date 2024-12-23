@@ -77,7 +77,9 @@ class ArticlePage extends StatelessWidget {
       'title': 'AQUA Kelola 1,400 Ton Sampah untuk Wujudkan Komitmen Bijak Berplastik',
     },
   ];
-
+  
+  ArticlePage({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
