@@ -9,7 +9,8 @@ class CompanyPage extends StatelessWidget {
           'Sebuah platform digital yang memungkinkan pengguna mendaur ulang botol plastik dan mendapatkan poin yang dapat ditukar dengan berbagai produk atau layanan.',
     },
     {
-      'logo': 'https://www.facebook.com/erecycle.id//150', // URL gambar logo eRecycle
+      'logo':
+          'https://www.facebook.com/erecycle.id//150', // URL gambar logo eRecycle
       'name': 'eRecycle (PT eRecycle Indonesia)',
       'description':
           'Aplikasi pengelolaan sampah daur ulang yang memberikan poin kepada pengguna yang mendaur ulang botol plastik. Poin ini dapat ditukar dengan saldo dompet digital atau voucher.',
