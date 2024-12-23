@@ -3,26 +3,26 @@ import 'package:flutter/material.dart';
 class CompanyPage extends StatelessWidget {
   final List<Map<String, String>> companies = [
     {
-      'logo': 'https://plasticpay.net//150', // URL gambar logo Plasticpay
+      'logo': 'images/ptplasticpay.png', // URL gambar logo Plasticpay
       'name': 'Plasticpay Indonesia (PT Plasticpay Teknologi Daur Ulang)',
       'description':
           'Sebuah platform digital yang memungkinkan pengguna mendaur ulang botol plastik dan mendapatkan poin yang dapat ditukar dengan berbagai produk atau layanan.',
     },
     {
       'logo':
-          'https://www.facebook.com/erecycle.id//150', // URL gambar logo eRecycle
+          'images/pterecycleindo.jpeg', // URL gambar logo eRecycle
       'name': 'eRecycle (PT eRecycle Indonesia)',
       'description':
           'Aplikasi pengelolaan sampah daur ulang yang memberikan poin kepada pengguna yang mendaur ulang botol plastik. Poin ini dapat ditukar dengan saldo dompet digital atau voucher.',
     },
     {
-      'logo': 'https://waste4change.com//150', // URL gambar logo Waste4Change
+      'logo': 'images/ptwaste4change.jpeg', // URL gambar logo Waste4Change
       'name': 'Waste4Change (PT Waste for Change Alam Indonesia)',
       'description':
           'Perusahaan ini fokus pada pengelolaan sampah terintegrasi. Meskipun lebih umum di bidang daur ulang, mereka menyediakan layanan pengumpulan dan pengolahan limbah plastik.',
     },
     {
-      'logo': 'https://gringgo.co/aboutus/150', // URL gambar logo Gringgo
+      'logo': 'images/ptgringgo.png', // URL gambar logo Gringgo
       'name': 'Gringgo (PT Gringgo Indonesia Gemilang)',
       'description':
           'Perusahaan teknologi yang mempermudah pengelolaan dan daur ulang sampah melalui aplikasi berbasis AI. Solusi mereka membantu masyarakat mengelola limbah dan mengurangi sampah ke TPA.',

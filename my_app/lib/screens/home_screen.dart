@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-//Import Screen Bottom Navbar
+// Import Screen Bottom Navbar
 import 'package:my_app/screens/news_screen.dart';
 import 'package:my_app/screens/your_poin_page.dart';
 import 'package:my_app/screens/discussion_page.dart';
 import 'package:my_app/screens/account_page.dart';
-//Import Screen category
+// Import Screen category
 import 'package:my_app/screens/scan_page.dart';
 import 'package:my_app/screens/company_page.dart';
 import 'package:my_app/screens/ecocycle_page.dart';
@@ -14,7 +14,7 @@ import 'package:my_app/screens/location_page.dart';
 
 class HomePage extends StatelessWidget {
   // Creating Static data in Lists
-  List catNames = [
+  final List<String> catNames = [
     "Scan",
     'EcoCycle',
     'Company',
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
   ];
 
   // List Warna
-  List<Color> catColors = [
+  final List<Color> catColors = [
     const Color(0xFFFFCF2F),
     const Color(0xFF6FE08D),
     const Color(0xFF61BDFD),
@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
   ];
 
   // List Icon
-  List<Icon> catIcons = [
+  final List<Icon> catIcons = [
     const Icon(Icons.qr_code_scanner_outlined, color: Colors.white, size: 30),
     const Icon(Icons.recycling_rounded, color: Colors.white, size: 30),
     const Icon(Icons.store, color: Colors.white, size: 30),
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
     const Icon(Icons.location_city, color: Colors.white, size: 30),
   ];
 
-  List imgList = [
+  final List<String> imgList = [
     'environmental1',
     'environmental2',
     'environmental3',
@@ -58,12 +58,10 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: [
           Container(
-            //Recomend (top: 15, left: 15, right: 15, bottom: 15)
             padding: const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
             decoration: const BoxDecoration(
               color: Color.fromARGB(255, 0, 164, 3),
               borderRadius: BorderRadius.only(
-                //lengkungan backround hijau
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
@@ -71,7 +69,6 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // logo profile dan menu hamburger
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -87,7 +84,6 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Nama User
                 const SizedBox(height: 10),
                 const Padding(
                   padding: EdgeInsets.only(left: 3, bottom: 15),
@@ -102,11 +98,9 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                //Teks Search Here
                 Container(
                   margin: const EdgeInsets.only(top: 5, bottom: 20),
                   width: MediaQuery.of(context).size.width,
-                  //Teks Box, Size big recomend : 55
                   height: 35,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -130,13 +124,10 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          
           Padding(
             padding: const EdgeInsets.only(top: 5, left: 15, right: 15),
-            child: 
-            Column(
+            child: Column(
               children: [
-                // Foto Banner kecil
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: ClipRRect(
@@ -145,11 +136,10 @@ class HomePage extends StatelessWidget {
                       'images/banner1.png',
                       fit: BoxFit.cover,
                       width: MediaQuery.of(context).size.width,
-                      height: 120, // Ukuran kecil
+                      height: 120,
                     ),
                   ),
                 ),
-                // Teks Category dan See All
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -170,8 +160,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                // 6 Fitur Scan, EcoCycle, Company, Article, EcoEdu, Location
-                const SizedBox(height: 10), // Spasi antara header dan GridView
+                const SizedBox(height: 10),
                 GridView.builder(
                   itemCount: catNames.length,
                   shrinkWrap: true,
@@ -180,53 +169,27 @@ class HomePage extends StatelessWidget {
                     crossAxisCount: 3,
                     childAspectRatio: 1.1,
                   ),
-                  //LOGIKA dari Setiap Category
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        // Navigasi berdasarkan kategori
                         switch (index) {
-                          case 0: // Scan
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const ScanPage()),
-                            );
+                          case 0:
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ScanPage()));
                             break;
-                          case 1: // EcoCycle
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const EcoCyclePage()),
-                            );
+                          case 1:
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EcoCyclePage()));
                             break;
-                          case 2: // Company
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const CompanyPage()),
-                            );
+                          case 2:
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => CompanyPage()));
                             break;
-                          case 3: // Article
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => ArticlePage()),
-                            );
+                          case 3:
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ArticlePage()));
                             break;
-                          case 4: // EcoEdu
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const EcoEduPage(imgList: ["environmental1", "environmental2", "environmental3", "environmental4"],)),
-                            );
+                          case 4:
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => EcoEduPage(imgList: imgList)));
                             break;
-                          case 5: // Location
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LocationPage()),
-                            );
+                          case 5:
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LocationPage()));
                             break;
                         }
                       },
@@ -257,9 +220,7 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-
-                // Tulisan Newest dan See All
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -281,15 +242,17 @@ class HomePage extends StatelessWidget {
                 ),
 
                 // Kategori News
-                const SizedBox(height: 10),
+                SizedBox(height: 10),
                 //Ngambil Nama dari List
                 GridView.builder(
-                  itemCount: imgList.sublist(0, 2).length, // Hanya mengambil 2 item pertama
+                  itemCount: imgList.length,
                   shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: (MediaQuery.of(context).size.height - 50 - 25) / (4 * 240),
+                    childAspectRatio:
+                        (MediaQuery.of(context).size.height - 50 - 25) /
+                            (4 * 240),
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
                   ),
@@ -297,41 +260,47 @@ class HomePage extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => NewsScreen(imgList.sublist(0, 2)[index]),
-                          ),
-                        );
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => NewsScreen(imgList[index]),
+                            ));
                       },
+                      //Border Padding
                       child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: const Color(0xFFF5F3FF),
+                          color: Color(0xFFF5F3FF),
                         ),
                         child: Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(top: 5, left: 15, right: 15, bottom: 20),
+                              padding: EdgeInsets.only(
+                                  top: 5, left: 15, right: 15, bottom: 20),
+                              //Ngambil Gambar dari yang diatas dan repo
                               child: Image.asset(
-                                "images/${imgList.sublist(0, 2)[index]}.jpg",
+                                "images/${imgList[index]}.jpg",
                                 width: 100,
                                 height: 100,
                               ),
                             ),
-                            const SizedBox(height: 5),
+                            //Lengkah antar Gambar dan Teks
+                            SizedBox(height: 5),
                             Text(
-                              imgList.sublist(0, 2)[index],
+                              imgList[index],
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.6),
                               ),
                             ),
-                            const SizedBox(height: 5),
-                            const Text(
+                            //Lengkah antar Judul dan Deskripsi
+                            SizedBox(height: 5),
+                            Text(
                               "20 Videos",
-                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.w500),
                             ),
                           ],
                         ),
@@ -339,13 +308,11 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
-
               ],
             ),
           ),
         ],
       ),
-      // Navbar Bawah
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         iconSize: 32,
@@ -354,31 +321,17 @@ class HomePage extends StatelessWidget {
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.money_sharp), label: 'Your Poin'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.message), label: 'Discussion'),
+          BottomNavigationBarItem(icon: Icon(Icons.money_sharp), label: 'Your Poin'),
+          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Discussion'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
         ],
-        //untuk pindah navbar (logikanya)
         onTap: (index) {
-          print("Tapped on $index");
-          // Navigasi berdasarkan index item
           if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const YourPoinPage()),
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (context) => YourPoinPage()));
           } else if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const DiscussionPage()),
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (context) => DiscussionPage()));
           } else if (index == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const AccountPage()),
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (context) => AccountPage()));
           }
         },
       ),
