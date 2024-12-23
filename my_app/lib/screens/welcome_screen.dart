@@ -68,7 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     // Judul
                     const Text(
-                      "Go Green",
+                      "GreenBucks",
                       // Style Judul
                       style: TextStyle(
                         fontSize: 25,
