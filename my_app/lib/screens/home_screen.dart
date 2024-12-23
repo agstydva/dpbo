@@ -25,22 +25,22 @@ class HomePage extends StatelessWidget {
 
   // List Warna
   List<Color> catColors = [
-    Color(0xFFFFCF2F),
-    Color(0xFF6FE08D),
-    Color(0xFF61BDFD),
-    Color(0xFFFC7F7F),
-    Color(0xFFCB84FB),
-    Color(0xFF78E667),
+    const Color(0xFFFFCF2F),
+    const Color(0xFF6FE08D),
+    const Color(0xFF61BDFD),
+    const Color(0xFFFC7F7F),
+    const Color(0xFFCB84FB),
+    const Color(0xFF78E667),
   ];
 
   // List Icon
   List<Icon> catIcons = [
-    Icon(Icons.qr_code_scanner_outlined, color: Colors.white, size: 30),
-    Icon(Icons.recycling_rounded, color: Colors.white, size: 30),
-    Icon(Icons.store, color: Colors.white, size: 30),
-    Icon(Icons.article, color: Colors.white, size: 30),
-    Icon(Icons.book, color: Colors.white, size: 30),
-    Icon(Icons.location_city, color: Colors.white, size: 30),
+    const Icon(Icons.qr_code_scanner_outlined, color: Colors.white, size: 30),
+    const Icon(Icons.recycling_rounded, color: Colors.white, size: 30),
+    const Icon(Icons.store, color: Colors.white, size: 30),
+    const Icon(Icons.article, color: Colors.white, size: 30),
+    const Icon(Icons.book, color: Colors.white, size: 30),
+    const Icon(Icons.location_city, color: Colors.white, size: 30),
   ];
 
   List imgList = [
@@ -59,8 +59,8 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             //Recomend (top: 15, left: 15, right: 15, bottom: 15)
-            padding: EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
-            decoration: BoxDecoration(
+            padding: const EdgeInsets.only(top: 10, left: 15, right: 15, bottom: 5),
+            decoration: const BoxDecoration(
               color: Color.fromARGB(255, 0, 164, 3),
               borderRadius: BorderRadius.only(
                 //lengkungan backround hijau
@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // logo profile dan menu hamburger
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Icon(
@@ -88,8 +88,8 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 // Nama User
-                SizedBox(height: 10),
-                Padding(
+                const SizedBox(height: 10),
+                const Padding(
                   padding: EdgeInsets.only(left: 3, bottom: 15),
                   child: Text(
                     "Hi, Agastya Dava",
@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
                 ),
                 //Teks Search Here
                 Container(
-                  margin: EdgeInsets.only(top: 5, bottom: 20),
+                  margin: const EdgeInsets.only(top: 5, bottom: 20),
                   width: MediaQuery.of(context).size.width,
                   //Teks Box, Size big recomend : 55
                   height: 35,
@@ -120,7 +120,7 @@ class HomePage extends StatelessWidget {
                       hintStyle: TextStyle(
                         color: Colors.black.withOpacity(0.5),
                       ),
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Icons.search,
                         size: 25,
                       ),
@@ -132,13 +132,13 @@ class HomePage extends StatelessWidget {
           ),
           
           Padding(
-            padding: EdgeInsets.only(top: 5, left: 15, right: 15),
+            padding: const EdgeInsets.only(top: 5, left: 15, right: 15),
             child: 
             Column(
               children: [
                 // Foto Banner kecil
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 10),
+                  padding: const EdgeInsets.symmetric(vertical: 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8),
                     child: Image.asset(
@@ -150,7 +150,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 // Teks Category dan See All
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -171,12 +171,12 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 // 6 Fitur Scan, EcoCycle, Company, Article, EcoEdu, Location
-                SizedBox(height: 10), // Spasi antara header dan GridView
+                const SizedBox(height: 10), // Spasi antara header dan GridView
                 GridView.builder(
                   itemCount: catNames.length,
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     childAspectRatio: 1.1,
                   ),
@@ -190,21 +190,21 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ScanPage()),
+                                  builder: (context) => const ScanPage()),
                             );
                             break;
                           case 1: // EcoCycle
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EcoCyclePage()),
+                                  builder: (context) => const EcoCyclePage()),
                             );
                             break;
                           case 2: // Company
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => CompanyPage()),
+                                  builder: (context) => const CompanyPage()),
                             );
                             break;
                           case 3: // Article
@@ -218,14 +218,14 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EcoEduPage(imgList: ["environmental1", "environmental2", "environmental3", "environmental4"],)),
+                                  builder: (context) => const EcoEduPage(imgList: ["environmental1", "environmental2", "environmental3", "environmental4"],)),
                             );
                             break;
                           case 5: // Location
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LocationPage()),
+                                  builder: (context) => const LocationPage()),
                             );
                             break;
                         }
@@ -243,7 +243,7 @@ class HomePage extends StatelessWidget {
                               child: catIcons[index],
                             ),
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text(
                             catNames[index],
                             style: TextStyle(
@@ -259,7 +259,7 @@ class HomePage extends StatelessWidget {
                 ),
 
                 // Tulisan Newest dan See All
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -281,17 +281,15 @@ class HomePage extends StatelessWidget {
                 ),
 
                 // Kategori News
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 //Ngambil Nama dari List
                 GridView.builder(
-                  itemCount: imgList.length,
+                  itemCount: imgList.sublist(0, 2).length, // Hanya mengambil 2 item pertama
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio:
-                        (MediaQuery.of(context).size.height - 50 - 25) /
-                            (4 * 240),
+                    childAspectRatio: (MediaQuery.of(context).size.height - 50 - 25) / (4 * 240),
                     mainAxisSpacing: 10,
                     crossAxisSpacing: 10,
                   ),
@@ -299,47 +297,41 @@ class HomePage extends StatelessWidget {
                     return InkWell(
                       onTap: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => NewsScreen(imgList[index]),
-                            ));
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => NewsScreen(imgList.sublist(0, 2)[index]),
+                          ),
+                        );
                       },
-                      //Border Padding
                       child: Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Color(0xFFF5F3FF),
+                          color: const Color(0xFFF5F3FF),
                         ),
                         child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(
-                                  top: 5, left: 15, right: 15, bottom: 20),
-                              //Ngambil Gambar dari yang diatas dan repo
+                              padding: const EdgeInsets.only(top: 5, left: 15, right: 15, bottom: 20),
                               child: Image.asset(
-                                "images/${imgList[index]}.jpg",
+                                "images/${imgList.sublist(0, 2)[index]}.jpg",
                                 width: 100,
                                 height: 100,
                               ),
                             ),
-                            //Lengkah antar Gambar dan Teks
-                            SizedBox(height: 5),
+                            const SizedBox(height: 5),
                             Text(
-                              imgList[index],
+                              imgList.sublist(0, 2)[index],
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.black.withOpacity(0.6),
                               ),
                             ),
-                            //Lengkah antar Judul dan Deskripsi
-                            SizedBox(height: 5),
-                            Text(
+                            const SizedBox(height: 5),
+                            const Text(
                               "20 Videos",
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                             ),
                           ],
                         ),
@@ -347,6 +339,7 @@ class HomePage extends StatelessWidget {
                     );
                   },
                 ),
+
               ],
             ),
           ),
@@ -356,10 +349,10 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         showUnselectedLabels: true,
         iconSize: 32,
-        selectedItemColor: Color.fromARGB(255, 13, 158, 0),
+        selectedItemColor: const Color.fromARGB(255, 13, 158, 0),
         selectedFontSize: 16,
         unselectedItemColor: Colors.grey,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.money_sharp), label: 'Your Poin'),
@@ -374,17 +367,17 @@ class HomePage extends StatelessWidget {
           if (index == 1) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => YourPoinPage()),
+              MaterialPageRoute(builder: (context) => const YourPoinPage()),
             );
           } else if (index == 2) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => DiscussionPage()),
+              MaterialPageRoute(builder: (context) => const DiscussionPage()),
             );
           } else if (index == 3) {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => AccountPage()),
+              MaterialPageRoute(builder: (context) => const AccountPage()),
             );
           }
         },
