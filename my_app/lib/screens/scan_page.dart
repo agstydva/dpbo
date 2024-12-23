@@ -55,7 +55,7 @@ class ScannerPage extends StatelessWidget {
       ),
       body: Center(
         child: const Text(
-          "Halaman Scanner (Implementasikan Scanner Anda di sini)",
+          "Halaman Scanner (Implementasikan scanner anda di sini)",
           style: TextStyle(fontSize: 16),
         ),
       ),
