@@ -218,7 +218,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => EcoEduPage()),
+                                  builder: (context) => EcoEduPage(imgList: ["environmental1", "environmental2", "environmental3", "environmental4"],)),
                             );
                             break;
                           case 5: // Location
