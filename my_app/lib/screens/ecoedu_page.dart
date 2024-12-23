@@ -14,9 +14,9 @@ class EcoEduPage extends StatelessWidget {
       body: GridView.builder(
         itemCount: imgList.length,
         padding: const EdgeInsets.all(10),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 3 / 4,
+          childAspectRatio: 9 / 10,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
@@ -32,7 +32,7 @@ class EcoEduPage extends StatelessWidget {
               );
             },
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 color: const Color(0xFFF5F3FF),
