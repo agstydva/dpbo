@@ -13,7 +13,7 @@ class CompanyPage extends StatelessWidget {
           'images/pterecycleindo.jpeg', // URL gambar logo eRecycle
       'name': 'eRecycle (PT eRecycle Indonesia)',
       'description':
-          'Aplikasi pengelolaan sampah daur ulang yang memberikan poin kepada pengguna yang mendaur ulang botol plastik. Poin ini dapat ditukar dengan saldo dompet digital atau voucher.',
+          'Aplikasi pengelolaan sampah daur ulang yang memberikan poin kepada pengguna yang mendaur ulang botol plastik. Poin ini bisa ditukar dengan saldo dompet digital atau voucher.',
     },
     {
       'logo': 'images/ptwaste4change.jpeg', // URL gambar logo Waste4Change
