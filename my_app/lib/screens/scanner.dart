@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_code_scanner/qr_code_scanner.dart';
 
 class Scanner extends StatefulWidget {
   const Scanner({super.key});
@@ -10,12 +11,30 @@ class Scanner extends StatefulWidget {
 class _ScannerState extends State<Scanner> {
   bool _flashOn = false;
   bool _frontCam = false;
+  late final GlobalKey _qrKey = GlobalKey();
+  late QRViewController _controller;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: <Widget>[
+          // QRView untuk scanning
+          QRView(
+            key: _qrKey,
+            overlay: QrScannerOverlayShape(
+              borderColor: Colors.green,
+            ),
+            onQRViewCreated: (QRViewController controller) {
+              _controller = controller;
+              controller.scannedDataStream.listen((val) {
+                if (mounted) {
+                  _controller.dispose();
+                  Navigator.pop(context, val);
+                }
+              });
+            },
+          ),
           // Background color
           Container(
             color: Colors.blueAccent,
@@ -35,7 +54,7 @@ class _ScannerState extends State<Scanner> {
               ),
             ),
           ),
-          // Button Row
+          // Button Row for Flash, Front/Rear Camera and Close
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -50,6 +69,7 @@ class _ScannerState extends State<Scanner> {
                       setState(() {
                         _flashOn = !_flashOn;
                       });
+                      _controller.toggleFlash();
                     },
                   ),
                   IconButton(
@@ -60,6 +80,7 @@ class _ScannerState extends State<Scanner> {
                       setState(() {
                         _frontCam = !_frontCam;
                       });
+                      _controller.flipCamera();
                     },
                   ),
                   IconButton(
@@ -77,5 +98,12 @@ class _ScannerState extends State<Scanner> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    // Menutup controller saat halaman dihapus
+    _controller.dispose();
+    super.dispose();
   }
 }
