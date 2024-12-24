@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ScanPage extends StatelessWidget {
+class ScanPage extends StatefulWidget {
   const ScanPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    String? result; // Variable untuk menyimpan hasil scan
+  _ScanPageState createState() => _ScanPageState();
+}
 
+class _ScanPageState extends State<ScanPage> {
+  String? _result; // Variabel untuk menyimpan hasil scan
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Scan Page"),
@@ -16,7 +21,7 @@ class ScanPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              result ?? 'Data belum tersedia',
+              _result ?? 'Data belum tersedia',
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
@@ -25,9 +30,7 @@ class ScanPage extends StatelessWidget {
             const SizedBox(height: 20),
             FloatingActionButton(
               child: const Icon(Icons.center_focus_strong),
-              onPressed: () {
-                _openScanner(context);
-              },
+              onPressed: () => _openScanner(context), // Perbaiki pemanggilan fungsi
             ),
           ],
         ),
@@ -35,12 +38,19 @@ class ScanPage extends StatelessWidget {
     );
   }
 
-  void _openScanner(BuildContext context) {
-    // Navigasi ke halaman scanner (ScannerPage perlu Anda buat)
-    Navigator.push(
+  Future<void> _openScanner(BuildContext context) async {
+    // Navigasi ke halaman scanner dan tunggu hasilnya
+    final result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const ScannerPage()),
     );
+
+    // Menyimpan hasil scan ke variabel _result
+    if (result != null) {
+      setState(() {
+        _result = result.toString();
+      });
+    }
   }
 }
 
@@ -54,9 +64,12 @@ class ScannerPage extends StatelessWidget {
         title: const Text("Scanner"),
       ),
       body: Center(
-        child: const Text(
-          "Halaman Scanner (Implementasikan scanner anda di sini)",
-          style: TextStyle(fontSize: 16),
+        child: ElevatedButton(
+          onPressed: () {
+            // Menutup halaman scanner dan mengirimkan hasil scan
+            Navigator.pop(context, 'Hasil scan berhasil');
+          },
+          child: const Text('Kembali dengan hasil scan'),
         ),
       ),
     );
